@@ -1,12 +1,12 @@
-using HR.LeaveManagement.Domain.Common;
+using HR.LeaveManagement.Application.DTOs.Common;
 
-namespace HR.LeaveManagement.Domain;
+namespace HR.LeaveManagement.Application.DTOs;
 
-public class LeaveRequest : BaseDomainEntity
+public class LeaveRequestDto : BaseDto
 {
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
-    public LeaveType LeaveType { get; set; }
+    public LeaveTypeDto LeaveType { get; set; }
     public int LeaveTypeId { get; set; }
     public DateTime RequestDate { get; set; }
     public DateTime ActionDate { get; set; }
