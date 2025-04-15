@@ -10,7 +10,7 @@ public class LeaveRequestDto : BaseDto
     public LeaveTypeDto LeaveType { get; set; }
     public int LeaveTypeId { get; set; }
     public DateTime RequestDate { get; set; }
-    public DateTime ActionDate { get; set; }
+    public DateTime? ActionDate { get; set; }
     public bool? IsApproved { get; set; }
     public bool IsCancelled { get; set; }
 }

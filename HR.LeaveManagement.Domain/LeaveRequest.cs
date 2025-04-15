@@ -9,7 +9,7 @@ public class LeaveRequest : BaseDomainEntity
     public LeaveType LeaveType { get; set; }
     public int LeaveTypeId { get; set; }
     public DateTime RequestDate { get; set; }
-    public DateTime ActionDate { get; set; }
+    public DateTime? ActionDate { get; set; }
     public bool? IsApproved { get; set; }
     public bool IsCancelled { get; set; }
 }
