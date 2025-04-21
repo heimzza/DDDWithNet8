@@ -6,12 +6,12 @@ using MediatR;
 
 namespace HR.LeaveManagement.Application.Features.LeaveAllocations.Handlers.Commands;
 
-public class CreateLeaveAllocationRequestHandler : IRequestHandler<CreateLeaveAllocationRequest, int>
+public class CreateLeaveAllocationCommandHandler : IRequestHandler<CreateLeaveAllocationRequest, int>
 {
     private readonly ILeaveAllocationRepository _leaveAllocationRepository;
     private readonly IMapper _mapper;
 
-    public CreateLeaveAllocationRequestHandler(ILeaveAllocationRepository leaveAllocationRepository, IMapper mapper)
+    public CreateLeaveAllocationCommandHandler(ILeaveAllocationRepository leaveAllocationRepository, IMapper mapper)
     {
         _leaveAllocationRepository = leaveAllocationRepository;
         _mapper = mapper;
