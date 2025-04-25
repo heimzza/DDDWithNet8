@@ -1,7 +1,6 @@
 using FluentValidation;
-using HR.LeaveManagement.Application.DTOs.LeaveType;
 
-namespace HR.LeaveManagement.Application.Features.LeaveTypes.Validators;
+namespace HR.LeaveManagement.Application.DTOs.LeaveType.Validators;
 
 public class CreateLeaveTypeDtoValidator : AbstractValidator<CreateLeaveTypeDto>
 {
