@@ -2,7 +2,7 @@ using FluentValidation;
 
 namespace HR.LeaveManagement.Application.DTOs.LeaveAllocation.Validators;
 
-public class CreateLeaveAllocationDtoValidator : AbstractValidator<CreateLeaveAllocationDto>
+public class CreateLeaveAllocationDtoValidator : AbstractValidator<ILeaveAllocationDto>
 {
     public CreateLeaveAllocationDtoValidator()
     {
