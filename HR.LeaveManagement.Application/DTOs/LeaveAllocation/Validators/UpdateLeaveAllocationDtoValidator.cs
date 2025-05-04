@@ -1,11 +1,16 @@
 using FluentValidation;
+using HR.LeaveManagement.Application.Persistence.Contracts;
 
 namespace HR.LeaveManagement.Application.DTOs.LeaveAllocation.Validators;
 
-public class UpdateLeaveAllocationDtoValidator : AbstractValidator<ILeaveAllocationDto>
+public class UpdateLeaveAllocationDtoValidator : AbstractValidator<UpdateLeaveAllocationDto>
 {
-    public UpdateLeaveAllocationDtoValidator()
+    private readonly ILeaveTypeRepository _leaveTypeRepository;
+    public UpdateLeaveAllocationDtoValidator(ILeaveTypeRepository leaveTypeRepository)
     {
-        Include(new CreateLeaveAllocationDtoValidator());
+        _leaveTypeRepository = leaveTypeRepository;
+        Include(new CreateLeaveAllocationDtoValidator(_leaveTypeRepository));
+        
+        RuleFor(x => x.Id).NotNull().WithMessage("{PropertyName} is required.");
     }
 }
