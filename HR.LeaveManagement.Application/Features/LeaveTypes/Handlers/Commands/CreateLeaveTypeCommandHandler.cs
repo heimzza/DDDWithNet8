@@ -1,5 +1,6 @@
 using AutoMapper;
 using HR.LeaveManagement.Application.DTOs.LeaveType.Validators;
+using HR.LeaveManagement.Application.Exceptions;
 using HR.LeaveManagement.Application.Features.LeaveTypes.Requests.Commands;
 using HR.LeaveManagement.Application.Persistence.Contracts;
 using HR.LeaveManagement.Domain;
@@ -25,7 +26,7 @@ public class CreateLeaveTypeCommandHandler : IRequestHandler<CreateLeaveTypeComm
 
         if (!validationResult.IsValid)
         {
-            throw new Exception(validationResult.Errors.ToString());
+            throw new ValidationException(validationResult);
         }
         
         var leaveType = _mapper.Map<LeaveType>(command);
