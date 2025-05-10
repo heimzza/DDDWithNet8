@@ -40,8 +40,9 @@ public class CreateLeaveTypeCommandHandler : IRequestHandler<CreateLeaveTypeComm
         leaveType = await _repository.AddAsync(leaveType);
         
         response.Success = true;
-        response.Message = "Created leave type";
+        response.Message = "Leave Type Created Successfully";
         response.Id = leaveType.Id;
+        
         return response;
     }
 }
