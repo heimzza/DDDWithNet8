@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Application", "HR.LeaveManagement.Application\HR.LeaveManagement.Application.csproj", "{708CCBD3-467A-4B7D-BCBA-2CA7EF418803}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Infrastructure", "HR.LeaveManagement.Infrastructure\HR.LeaveManagement.Infrastructure.csproj", "{81CC1E38-0677-4BF3-8016-80F79C7A6F6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR.LeaveManagement.Persistence", "HR.LeaveManagement.Persistence\HR.LeaveManagement.Persistence.csproj", "{AEE41D80-7A65-4627-96ED-9176334E36FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +34,14 @@ Global
 		{708CCBD3-467A-4B7D-BCBA-2CA7EF418803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{708CCBD3-467A-4B7D-BCBA-2CA7EF418803}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{708CCBD3-467A-4B7D-BCBA-2CA7EF418803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CC1E38-0677-4BF3-8016-80F79C7A6F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CC1E38-0677-4BF3-8016-80F79C7A6F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CC1E38-0677-4BF3-8016-80F79C7A6F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CC1E38-0677-4BF3-8016-80F79C7A6F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEE41D80-7A65-4627-96ED-9176334E36FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE41D80-7A65-4627-96ED-9176334E36FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE41D80-7A65-4627-96ED-9176334E36FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE41D80-7A65-4627-96ED-9176334E36FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1988B0EC-6C44-4946-8234-CE772BB06D80} = {1304D8D9-A44A-470E-BF62-E77213592FCD}
@@ -38,5 +50,7 @@ Global
 		{5E9F127C-F07D-407F-89FD-A902836C9952} = {1304D8D9-A44A-470E-BF62-E77213592FCD}
 		{CEF141FE-3356-464D-80F1-AA310D4670AD} = {8C8C159A-24B3-4C0F-996E-CD3809E9275B}
 		{708CCBD3-467A-4B7D-BCBA-2CA7EF418803} = {8C8C159A-24B3-4C0F-996E-CD3809E9275B}
+		{81CC1E38-0677-4BF3-8016-80F79C7A6F6F} = {0550AE5A-219D-47AE-A612-50B2B845C328}
+		{AEE41D80-7A65-4627-96ED-9176334E36FF} = {0550AE5A-219D-47AE-A612-50B2B845C328}
 	EndGlobalSection
 EndGlobal
