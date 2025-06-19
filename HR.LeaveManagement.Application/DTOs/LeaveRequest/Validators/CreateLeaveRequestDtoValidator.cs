@@ -5,7 +5,7 @@ namespace HR.LeaveManagement.Application.DTOs.LeaveRequest.Validators;
 
 public class CreateLeaveRequestDtoValidator : AbstractValidator<ILeaveRequestDto>
 {
-    public CreateLeaveRequestDtoValidator(ILeaveRequestRepository repository)
+    public CreateLeaveRequestDtoValidator(ILeaveTypeRepository repository)
     {
         RuleFor(x => x.StartDate)
             .LessThan(x => x.EndDate)

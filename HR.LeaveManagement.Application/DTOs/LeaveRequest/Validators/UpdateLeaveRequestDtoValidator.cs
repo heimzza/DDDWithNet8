@@ -5,7 +5,7 @@ namespace HR.LeaveManagement.Application.DTOs.LeaveRequest.Validators;
 
 public class UpdateLeaveRequestDtoValidator : AbstractValidator<UpdateLeaveRequestDto>
 {
-    public UpdateLeaveRequestDtoValidator(ILeaveRequestRepository repository)
+    public UpdateLeaveRequestDtoValidator(ILeaveTypeRepository repository)
     {
         Include(new CreateLeaveRequestDtoValidator(repository));
         

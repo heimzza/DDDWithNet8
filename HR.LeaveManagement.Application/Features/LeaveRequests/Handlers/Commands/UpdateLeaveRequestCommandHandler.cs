@@ -12,18 +12,23 @@ namespace HR.LeaveManagement.Application.Features.LeaveRequests.Handlers.Command
 
 public class UpdateLeaveRequestCommandHandler : IRequestHandler<UpdateLeaveRequestCommand, Unit>
 {
-    private readonly ILeaveRequestRepository _repository;
+    private readonly ILeaveRequestRepository _leaveRequestRepository;
+    private readonly ILeaveTypeRepository _leaveTypeRepository;
     private readonly IMapper _mapper;
 
-    public UpdateLeaveRequestCommandHandler(ILeaveRequestRepository repository, IMapper mapper)
+    public UpdateLeaveRequestCommandHandler(
+        ILeaveRequestRepository leaveRequestRepository,
+        ILeaveTypeRepository leaveTypeRepository,
+        IMapper mapper)
     {
-        _repository = repository;
+        _leaveRequestRepository = leaveRequestRepository;
+        _leaveTypeRepository = leaveTypeRepository;
         _mapper = mapper;
     }
 
     public async Task<Unit> Handle(UpdateLeaveRequestCommand request, CancellationToken cancellationToken)
     {
-        var validator = new UpdateLeaveRequestDtoValidator(_repository);
+        var validator = new UpdateLeaveRequestDtoValidator(_leaveTypeRepository);
         var validationResult = await validator.ValidateAsync(request.LeaveRequestDto, cancellationToken);
 
         if (!validationResult.IsValid)
@@ -31,17 +36,17 @@ public class UpdateLeaveRequestCommandHandler : IRequestHandler<UpdateLeaveReque
             throw new ValidationException(validationResult);
         }
         
-        var leaveRequest = await _repository.GetAsync(request.Id);
+        var leaveRequest = await _leaveRequestRepository.GetAsync(request.Id);
         
         if (request.LeaveRequestDto != null)
         {
             leaveRequest = _mapper.Map<LeaveRequest>(request.LeaveRequestDto);
         
-            await _repository.UpdateAsync(leaveRequest);
+            await _leaveRequestRepository.UpdateAsync(leaveRequest);
         }
         else if (request.ChangeLeaveRequestApprovalDto != null)
         {   
-            await _repository.ChangeApprovalStatusAsync(leaveRequest, request.ChangeLeaveRequestApprovalDto.IsApproved);
+            await _leaveRequestRepository.ChangeApprovalStatusAsync(leaveRequest, request.ChangeLeaveRequestApprovalDto.IsApproved);
         }
         
         return Unit.Value;
